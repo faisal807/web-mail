@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mail</title>
+    <link rel="stylesheet" href="Styles/style.css">
+</head>
+<body>
+    <div class="mail">
+        <h3>Send Mail</h3>
+        <form onsubmit="sendEmail(); reset(); return false;">
+            <label for="name">Name</label>
+            <br>
+            <input type="text" id="name" placeholder="Name...">
+            <br>
+            <label for="email">Email</label>
+            <br>
+            <input type="email" id="email" placeholder="example@email.com">
+            <br>
+            <label for="message">Message</label>
+            <br>
+            <textarea id="message" cols="30" rows="10"></textarea>
+            <br>
+            <button>Send</button>
+        </form>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script>
+        function sendEmail() {
+                Email.send({
+                SecureToken: "9DF2E75516C8559C061100D591AE6270221CE903A1EDD26F6F5161882786BC8329BAF34D59DE457EC1AAB8D9794C54FB",
+                To : 'fa78658@gmail.com',
+                From : document.getElementById("email").value,
+                Subject : "This is the subject",
+                Body : document.getElementById("email").value
+                +"<br> Email: " + document.getElementById("email").value
+                +"<br> Message: " + document.getElementById("message").value,
+            }).then(
+            message => alert(message)
+            );
+        }
+    </script>
+</body>
+</html>

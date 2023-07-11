@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+.mail{
+    display: block;
+    margin-left: 35%;
+    margin-right: 25%;
+    margin-top: 10%;
+    line-height: 20px;
+    border: none;
+    background: blueviolet;
+    border-radius: 8px;
+    padding: 45px;
+}
+input[type="text"],[type="email"]{
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px;
+}
+textarea{
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px;
+}
+button{
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+}
