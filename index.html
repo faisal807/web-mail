@@ -18,6 +18,10 @@
             <br>
             <input type="email" id="email" placeholder="example@email.com">
             <br>
+            <label for="send-email">Send to Email</label>
+            <br>
+            <input type="email" id="toEmail" placeholder="example@email.com">
+            <br>
             <label for="message">Message</label>
             <br>
             <textarea id="message" cols="30" rows="10"></textarea>
@@ -31,11 +35,12 @@
         function sendEmail() {
                 Email.send({
                 SecureToken: "8570f48d-7cb0-4f2d-bed2-a9ae87bafcdc",
-                To : 'fa78658@gmail.com',
+                To : document.getElementById('toEmail').value,
                 From : document.getElementById("email").value,
                 Subject : "This is the subject",
-                Body : "Name :" + document.getElementById("email").value
-                +"<br> Email: " + document.getElementById("email").value
+                Body : "Name : " + document.getElementById("name").value
+                +"<br>From Email: " + document.getElementById("email").value
+                +"<br>To Email: " + document.getElementById("toEmail").value
                 +"<br> Message: " + document.getElementById("message").value,
             }).then(
             message => alert(message)
