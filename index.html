@@ -16,7 +16,7 @@
             <br>
             <label for="email">Email</label>
             <br>
-            <input type="email" id="email" placeholder="example@email.com">
+            <input type="email" id="Sendemail" placeholder="example@email.com">
             <br>
             <label for="send-email">Send to Email</label>
             <br>
@@ -36,10 +36,10 @@
                 Email.send({
                 SecureToken: "8570f48d-7cb0-4f2d-bed2-a9ae87bafcdc",
                 To : document.getElementById('toEmail').value,
-                From : document.getElementById("email").value,
+                From : document.getElementById("Sendemail").value,
                 Subject : "This is the subject",
                 Body : "Name : " + document.getElementById("name").value
-                +"<br>From Email: " + document.getElementById("email").value
+                +"<br>From Email: " + document.getElementById("Sendemail").value
                 +"<br>To Email: " + document.getElementById("toEmail").value
                 +"<br> Message: " + document.getElementById("message").value,
             }).then(
